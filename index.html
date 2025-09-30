@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0b0c0e">
+    <meta name="color-scheme" content="dark light">
+    <meta name="description" content="PEUGEOT 307 — стильная презентация с эффектными анимациями и интерактивом.">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Peugeot 307">
+    <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+    <title>Peugeot 307 — Презентация</title>
+    <link rel="icon" href="logo1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-container">
+            <div class="logo-letters">
+                <div class="letter letter-p">P</div>
+                <div class="letter letter-e">E</div>
+                <div class="letter letter-u">U</div>
+                <div class="letter letter-g">G</div>
+                <div class="letter letter-e2">E</div>
+                <div class="letter letter-o">O</div>
+                <div class="letter letter-t">T</div>
+            </div>
+            <div class="loading-subtitle">Loading...</div>
+        </div>
+        <div class="loading-bg"></div>
+    </div>
+
+    <div id="cursor"></div>
+
+    <header class="site-header">
+        <a class="brand" href="#hero">
+            <img src="logo2.jpg" alt="Peugeot" class="brand__logo" />
+            <span class="brand__name">PEUGEOT 307</span>
+        </a>
+        <nav class="nav">
+            <a href="#features" class="nav__link">Особенности</a>
+            <a href="#plate" class="nav__link">Госномер</a>
+            <a href="#gallery" class="nav__link">Галерея</a>
+            <a href="#experience" class="btn btn--primary">Интерактив</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="hero" class="hero">
+            <div class="hero__bg">
+                <img src="photo_1_2025-09-30_12-27-34.jpg" alt="Peugeot 307" class="hero__img layer" data-depth="0.2">
+                <img src="photo_7_2025-09-30_12-27-34.jpg" alt="Peugeot 307 angle" class="hero__img hero__img--alt layer" data-depth="0.4">
+                <div class="hero__gradient"></div>
+            </div>
+            <div class="container hero__content">
+                <h1 class="hero__title"><span class="accent">Peugeot 307</span> — динамика стиля</h1>
+                <p class="hero__subtitle">Линии, созданные увлекать. Технологии, чтобы возвращаться снова и снова.</p>
+                <div class="hero__cta">
+                    <a href="#gallery" class="btn btn--glow">Смотреть фото</a>
+                    <a href="#features" class="btn btn--ghost">Узнать больше</a>
+                </div>
+                <div class="scroll-hint">Прокрутите</div>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section id="features" class="features section">
+            <div class="container">
+                <h2 class="section__title">Почему 307 впечатляет</h2>
+                <div class="grid features__grid">
+                    <article class="feature-card tilt rolling-element">
+                        <div class="feature-card__icon">⚡</div>
+                        <h3 class="feature-card__title">Реактивная динамика</h3>
+                        <p class="feature-card__text">Уверенная тяга и точное руление дарят азарт в каждом километре.</p>
+                        <button class="chip" data-spark>Чувствовать дорогу</button>
+                    </article>
+                    <article class="feature-card tilt rolling-element">
+                        <div class="feature-card__icon">🎛️</div>
+                        <h3 class="feature-card__title">Умный комфорт</h3>
+                        <p class="feature-card__text">Эргономичный салон, тишина и технологии — чтобы хотеть большего.</p>
+                        <button class="chip" data-spark>Сфокусироваться</button>
+                    </article>
+                    <article class="feature-card tilt rolling-element">
+                        <div class="feature-card__icon">🦁</div>
+                        <h3 class="feature-card__title">Фирменный стиль</h3>
+                        <p class="feature-card__text">Дизайн со знаком льва: узнаваемые пропорции и уверенный силуэт.</p>
+                        <button class="chip" data-spark>Быть заметным</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- LICENSE PLATE SPOTLIGHT -->
+        <section id="plate" class="plate section">
+            <div class="container">
+                <div class="plate__wrap">
+                    <div class="plate__beam" aria-hidden="true"></div>
+                    <div class="plate__glass">
+                        <div class="plate__flag">RUS</div>
+                        <div class="plate__num" aria-label="госномер">о024со32</div>
+                    </div>
+                </div>
+                <p class="plate__caption">Особая деталь: индивидуальный характер начинается с номера.</p>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section id="gallery" class="gallery section">
+            <div class="container">
+                <h2 class="section__title">Галерея настроения</h2>
+                <div class="gallery__viewport">
+                    <div class="gallery__track" data-draggable>
+                        <img src="photo_2_2025-09-30_12-27-34.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_3_2025-09-30_12-27-34.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_4_2025-09-30_12-27-34.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_5_2025-09-30_12-27-34.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_6_2025-09-30_12-27-34.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_7_2025-09-30_12-27-42.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_8_2025-09-30_12-27-34.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_9_2025-09-30_12-27-34.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_10_2025-09-30_12-27-34.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_11_2025-09-30_12-27-34.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_12_2025-09-30_12-27-34.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_13_2025-09-30_12-27-34.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_1_2025-09-30_12-27-42.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_2_2025-09-30_12-27-42.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_3_2025-09-30_12-27-42.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_4_2025-09-30_12-27-42.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_5_2025-09-30_12-27-42.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_6_2025-09-30_12-27-42.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_7_2025-09-30_12-27-42.jpg" alt="Peugeot 307" class="gallery__item"/>
+                        <img src="photo_8_2025-09-30_12-27-42.jpg" alt="Peugeot 307" class="gallery__item"/>
+                    </div>
+                </div>
+                <div class="gallery__controls">
+                    <button class="btn btn--ghost" data-prev>Назад</button>
+                    <button class="btn btn--primary" data-next>Вперед</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Experience -->
+        <section id="experience" class="experience section">
+            <div class="container">
+                <h2 class="section__title">Почувствуйте характер</h2>
+                <div class="experience__grid">
+                    <div class="experience-card" data-interactive="engine">
+                        <div class="experience-card__icon">🔥</div>
+                        <h3 class="experience-card__title">Запустите двигатель</h3>
+                        <p class="experience-card__text">Нажмите и услышите рев мотора</p>
+                        <div class="experience-card__action">
+                            <button class="btn btn--primary experience-btn" data-sound="engine">
+                                <span class="btn-text">Запустить</span>
+                                <div class="btn-effect"></div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-card" data-interactive="lights">
+                        <div class="experience-card__icon">💡</div>
+                        <h3 class="experience-card__title">Включите фары</h3>
+                        <p class="experience-card__text">Осветите путь вперед</p>
+                        <div class="experience-card__action">
+                            <div class="lights-controls">
+                                <button class="btn btn--primary experience-btn" data-lights="toggle">
+                                    <span class="btn-text">Включить</span>
+                                    <div class="btn-effect"></div>
+                                </button>
+                                <div class="lights-advanced" style="display: none;">
+                                    <button class="btn btn--secondary experience-btn" data-lights="highbeam">
+                                        <span class="btn-text">Дальний свет</span>
+                                        <div class="btn-effect"></div>
+                                    </button>
+                                    <button class="btn btn--ghost experience-btn" data-lights="off">
+                                        <span class="btn-text">Выключить</span>
+                                        <div class="btn-effect"></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-card" data-interactive="steering">
+                        <div class="experience-card__icon">🚗</div>
+                        <h3 class="experience-card__title">Управляйте рулем</h3>
+                        <p class="experience-card__text">Поворачивайте руль и почувствуйте движение</p>
+                        <div class="experience-card__action">
+                            <div class="steering-controls">
+                                <div class="steering-wheel" id="steering-wheel">
+                                    <div class="wheel-center">
+                                        <div class="wheel-spokes">
+                                            <div class="spoke"></div>
+                                            <div class="spoke"></div>
+                                            <div class="spoke"></div>
+                                        </div>
+                                        <div class="wheel-hub"></div>
+                                    </div>
+                                </div>
+                                <div class="steering-info">
+                                    <div class="angle-display">
+                                        <span class="angle-value">0°</span>
+                                        <span class="angle-label">Угол поворота</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience__footer">
+                    <p class="experience__caption">Каждое взаимодействие — это шаг к пониманию того, почему 307 особенный</p>
+                    <div class="experience__stats">
+                        <div class="stat">
+                            <span class="stat__number">0</span>
+                            <span class="stat__label">Взаимодействий</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__number">0</span>
+                            <span class="stat__label">Поворотов руля</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer__grid">
+            <div class="footer__brand">
+                <img src="logo1.png" alt="Peugeot" class="brand__logo" />
+                <span>PEUGEOT 307</span>
+            </div>
+            <div class="footer__legal">© <span id="year"></span> Независимая презентация. Все изображения принадлежат владельцу.</div>
+        </div>
+    </footer>
+    
+    <!-- Minimal noscript -->
+    <noscript>
+        Для полного опыта включите JavaScript — здесь много классных анимаций и интерактива.
+    </noscript>
+    
+</body>
+</html>
+
+
